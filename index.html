@@ -44,7 +44,7 @@
         }
 
         /* -----------------------------------------
-           FULL SCREEN FLOATING FLOWERS (সম্পূর্ণ স্ক্রিনে ফুলের অ্যানিমেশন)
+           FULL SCREEN FLOATING FLOWERS BACKGROUND
            ----------------------------------------- */
         .floating-flowers-bg {
             position: fixed;
@@ -80,20 +80,15 @@
                 transform: translateY(0) rotate(0deg) scale(0.9);
                 opacity: 0;
             }
-            20% {
-                opacity: 0.32;
-            }
-            80% {
-                opacity: 0.32;
-            }
+            20% { opacity: 0.32; }
+            80% { opacity: 0.32; }
             100% {
                 transform: translateY(-105vh) rotate(360deg) scale(1.15);
                 opacity: 0;
             }
         }
 
-        /* কন্টেন্টগুলো যেন ফুলের উপরে থাকে */
-        .top-header, .card-body, .trading-tips-box, .flower-garden-box, .app-footer {
+        .top-header, .card-body, .trading-tips-box, .flower-garden-box, .app-footer, .mid-watermark-box {
             position: relative;
             z-index: 2;
         }
@@ -402,8 +397,36 @@
         }
 
         /* -----------------------------------------
-           FOOTER & JOY WATERMARK STYLING
+           MID & FOOTER WATERMARK STYLING
            ----------------------------------------- */
+        .mid-watermark-box {
+            width: 92%;
+            max-width: 420px;
+            margin: 0 auto 10px auto;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .joy-watermark {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.25));
+            border: 1.5px solid rgba(255, 215, 0, 0.6);
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffd700;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.8), 0 0 20px rgba(236, 72, 153, 0.7);
+            letter-spacing: 0.8px;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+            animation: watermarkGlow 2s infinite alternate;
+        }
+
+        @keyframes watermarkGlow {
+            0% { border-color: rgba(255, 215, 0, 0.6); box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+            100% { border-color: rgba(236, 72, 153, 0.9); box-shadow: 0 0 20px rgba(236, 72, 153, 0.6); }
+        }
+
         .app-footer {
             text-align: center;
             font-size: 11px;
@@ -415,27 +438,10 @@
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             letter-spacing: 0.4px;
             flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
         }
 
         .app-footer span {
             color: #38bdf8;
-        }
-
-        .joy-watermark {
-            display: inline-block;
-            padding: 3px 14px;
-            border-radius: 20px;
-            background: linear-gradient(90deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
-            border: 1px solid rgba(244, 114, 182, 0.5);
-            font-size: 12.5px;
-            font-weight: 800;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7), 0 0 18px rgba(236, 72, 153, 0.6);
-            letter-spacing: 0.8px;
         }
     </style>
 </head>
@@ -532,11 +538,17 @@
         </div>
 
         <!-- =========================================
-             FOOTER & JOY WATERMARK SECTION
+             PROMINENT WATERMARK SECTION (এখানে ওয়াটারমার্ক একদম স্পষ্ট দেখাবে)
+             ========================================= -->
+        <div class="mid-watermark-box">
+            <div class="joy-watermark">♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】</div>
+        </div>
+
+        <!-- =========================================
+             FOOTER SECTION
              ========================================= -->
         <div class="app-footer">
-            <div>🔥 Powered by <span>BD WIN VIP System</span> | @Sayemvi48 🔥</div>
-            <div class="joy-watermark">♚𝗢𝗪𝗡𝗘𝗥 𝗢𝗙 𝗝𝗢𝗬【𝟐𝐱™️】</div>
+            🔥 Powered by <span>BD WIN VIP System</span> | @Sayemvi48 🔥
         </div>
     </div>
 
